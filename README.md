@@ -2,7 +2,7 @@
 
 > Intelligent 4-tier document processing system that automatically selects the optimal strategy to fit any document into an LLM's context window — no wasted tokens, no context overflow.
 
----
+
 
 ## The Problem
 
@@ -19,7 +19,7 @@ A tiered pipeline that analyses each document and picks the right strategy autom
 | **T3** — Strategic Chunking | 25K – 50K | Sentence-aware splits + BM25 keyword ranking | Large docs, query-driven retrieval |
 | **T4** — RAG Retrieval | > 50K | FAISS vector search (OpenAI or local embeddings) | Very large docs, semantic search |
 
----
+
 
 ## Architecture
 
@@ -78,8 +78,6 @@ The 200K context window is allocated as:
 └──────────────────────┴───────────────────────────────┘
 ```
 
----
-
 ## Tech Stack
 
 ### Backend
@@ -116,7 +114,7 @@ The 200K context window is allocated as:
 | Web Server | Nginx (frontend) |
 | CI-ready | GitHub Actions compatible |
 
----
+
 
 ## Project Structure
 
@@ -159,7 +157,7 @@ Smart Document Context Handler/
 └── README.md
 ```
 
----
+
 
 ## Quick Start
 
@@ -185,7 +183,7 @@ docker-compose up --build
 | API | http://localhost:8000 |
 | API Docs (Swagger) | http://localhost:8000/docs |
 
----
+
 
 ### Option B — Local Development
 
@@ -217,7 +215,7 @@ npm install
 npm run dev   # http://localhost:3000
 ```
 
----
+
 
 ## API Reference
 
@@ -301,7 +299,7 @@ pytest tests/ -v --tb=short
 pytest tests/ -v --cov=app --cov-report=term-missing
 ```
 
----
+
 
 ## Environment Variables
 
@@ -318,17 +316,6 @@ pytest tests/ -v --cov=app --cov-report=term-missing
 | `CHUNK_TARGET_TOKENS` | `512` | Target tokens per chunk |
 | `RAG_TOP_K` | `10` | Number of chunks to retrieve in T3/T4 |
 
----
 
-## Contributing
 
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/your-feature`
-3. Commit using [Conventional Commits](https://www.conventionalcommits.org/)
-4. Open a Pull Request
 
----
-
-## License
-
-MIT

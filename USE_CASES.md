@@ -2,7 +2,6 @@
 
 > How the 4-tier pipeline maps to production AI workflows across email deliverability, customer support, compliance, and data analysis platforms.
 
----
 
 ## 1. Deliverability Log Analysis
 
@@ -40,7 +39,6 @@ ContextAssembler: 5–10 relevant chunks sent to LLM
 
 **Key advantage:** The FAISS index is built once per log file and cached in Redis. Every subsequent query on the same log file hits the cache — no re-embedding, sub-second retrieval.
 
----
 
 ## 2. Customer Support / Knowledge Base Querying
 
@@ -76,7 +74,7 @@ LLM answers from ~1,500 tokens instead of 125,000
 
 **Result:** Precise, source-grounded answers. LLM costs drop dramatically. Response quality improves because the model isn't distracted by irrelevant documentation.
 
----
+
 
 ## 3. Multi-Client Report Generation
 
@@ -107,7 +105,6 @@ Total:                            200,000 tokens
 
 **Result:** No report data is silently dropped. If a report overflows the budget, it is chunked and ranked — the most important sections are always included.
 
----
 
 ## 4. Email Content Analysis at Scale
 
@@ -143,7 +140,7 @@ LLM analyses only the relevant campaign segments
 
 **Result:** Pattern analysis across thousands of email variants without context overflow. BM25 keyword ranking surfaces the most signal-rich data segments for any given analytical question.
 
----
+
 
 ## 5. Onboarding Document Processing
 
@@ -170,7 +167,6 @@ The rest of the pipeline is completely format-agnostic. Each file is independent
 
 **Result:** A single API endpoint handles any file type, any size. No custom handling per format required from the calling application.
 
----
 
 ## 6. Compliance & Audit Trail Queries
 
@@ -215,7 +211,7 @@ LLM returns structured summary from ~3K tokens of relevant data
 
 **Result:** Compliance queries are answered from source documents, not model memory. Audit trails can be searched semantically, not just by exact string match.
 
----
+
 
 ## Summary
 
